@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get a Quote for Bamboo Kitchenware | [TODO: Brand]</title>
+  <meta name="description" content="Send your bamboo cutting board or kitchen storage request: product, size, quantity and target market. We reply with questions or a quote.">
+  
+  <link rel="canonical" href="https://www.example.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Get a Quote for Bamboo Kitchenware | [TODO: Brand]">
+  <meta property="og:description" content="Send your bamboo cutting board or kitchen storage request: product, size, quantity and target market. We reply with questions or a quote.">
+  <meta property="og:url" content="https://www.example.com/contact.html">
+  <meta property="og:image" content="https://www.example.com/assets/img/og-cover.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">[TODO: Brand]</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="products.html">Products</a>
+        <a href="oem.html">Private Label &amp; OEM</a>
+        <a href="about.html">Factory</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn btn--primary" href="contact.html">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Get a Quote</div>
+      <h1>Get a Quote for Bamboo Kitchenware</h1>
+      <p class="lead">Tell us the product, size, quantity and target market. We reply within [TODO: hours] on business days.</p>
+      <!--
+        表单方案开关（见 references/07-deploy-and-forms.md）：
+        A. 默认 mailto：保留 data-mode="mailto"，下方脚本把内容拼成邮件。
+        B. 表单服务：改成 data-mode="service"，action 填服务给的地址（如 https://formspree.io/f/xxxx），method="POST"。
+      -->
+      <form class="form" id="quote-form" data-mode="mailto" data-to="sales@example.com" action="#" method="POST">
+        <div><label for="name">Your name *</label><input id="name" name="name" required autocomplete="name"></div>
+        <div><label for="company">Company *</label><input id="company" name="company" required autocomplete="organization"></div>
+        <div><label for="email">Business email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="country">Country *</label><input id="country" name="country" required autocomplete="country-name"></div>
+        <div><label for="product">Product</label><input id="product" name="product" placeholder="e.g. model, size, material"></div>
+        <div><label for="quantity">Quantity</label><input id="quantity" name="quantity" placeholder="e.g. pcs per order or per year"></div>
+        <div class="full"><label for="message">Message *</label><textarea id="message" name="message" required placeholder="Size, finish, packaging, target market, timeline…"></textarea></div>
+        <div class="full">
+          <label for="source">How did you find us?</label>
+          <select id="source" name="source">
+            <option value="">Please choose</option>
+            <option>Google</option>
+            <option>ChatGPT or other AI assistant</option>
+            <option>Bing</option>
+            <option>LinkedIn</option>
+            <option>Trade show</option>
+            <option>Referral</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <input class="hp" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_next" value="https://www.example.com/thank-you.html">
+        <div class="full">
+          <button class="btn btn--primary" type="submit">Send Inquiry</button>
+          <p style="font-size:14px;color:var(--muted);margin-top:12px">Or email us directly at <a href="mailto:sales@example.com">[TODO: inquiry email]</a>. We only use your details to reply to your inquiry.</p>
+        </div>
+      </form>
+
+      <section class="section">
+        <h2>What happens next</h2>
+        <ol class="steps">
+          <li>We review your spec</li>
+          <li>We reply with questions or a quote</li>
+          <li>Samples, if needed</li>
+        </ol>
+        <p style="margin-top:24px">Not sure what to send? Read the <a href="faq.html">buyer FAQ</a> or browse <a href="products.html">our products</a>.</p>
+      </section>
+    </div>
+  </main>
+  <script>
+    // 产品页带 ?product=xxx 过来时预填
+    var p = new URLSearchParams(location.search).get('product');
+    if (p) document.getElementById('product').value = p.replace(/-/g, ' ');
+
+    // mailto 模式：拼成邮件打开本机邮件客户端；service 模式：正常提交给表单服务
+    var f = document.getElementById('quote-form');
+    f.addEventListener('submit', function (e) {
+      if (f.dataset.mode !== 'mailto') return;
+      e.preventDefault();
+      if (f._gotcha.value) return; // 蜜罐
+      var d = new FormData(f), lines = [];
+      ['name', 'company', 'email', 'country', 'product', 'quantity', 'source', 'message'].forEach(function (k) {
+        lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ': ' + (d.get(k) || ''));
+      });
+      var subject = 'Inquiry from ' + (d.get('company') || d.get('name'));
+      location.href = 'mailto:' + f.dataset.to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    });
+  </script>
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>[TODO: Brand]</strong><br>
+        [TODO: company legal name]<br>
+        [TODO: address]<br>
+        <a href="mailto:sales@example.com">[TODO: inquiry email]</a>
+      </div>
+      <div>
+        <a href="products.html">Products</a>
+        <a href="products/bamboo-cutting-boards.html">Bamboo Cutting Boards</a>
+        <a href="products/bamboo-serving-boards.html">Bamboo Serving Boards</a>
+        <a href="products/bamboo-kitchen-storage.html">Bamboo Kitchen Storage</a>
+      </div>
+      <div>
+        <a href="oem.html">Private Label &amp; OEM</a>
+        <a href="about.html">Factory</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Get a Quote</a>
+        <span>© 2026 [TODO: Brand]</span>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-cta"><a class="btn btn--primary" href="#quote-form">Get a Quote</a></div>
+  <script>
+    var t = document.querySelector('.nav-toggle'), n = document.getElementById('nav');
+    t && t.addEventListener('click', function () { var o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+  </script>
+</body>
+</html>
+

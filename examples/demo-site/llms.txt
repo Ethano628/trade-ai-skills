@@ -1,0 +1,15 @@
+# [TODO: Brand]
+
+> Factory making bamboo cutting boards and bamboo kitchen storage for European supermarket buyers and kitchenware brands. Specifications, terms and certifications are confirmed per inquiry.
+
+## Products
+- [Bamboo Cutting Boards](https://www.example.com/products/bamboo-cutting-boards.html): wholesale cutting and chopping boards for retail and brand ranges
+- [Bamboo Serving Boards](https://www.example.com/products/bamboo-serving-boards.html): serving and cheese boards (range being confirmed)
+- [Bamboo Kitchen Storage](https://www.example.com/products/bamboo-kitchen-storage.html): kitchen organizers and storage
+- [All Products](https://www.example.com/products.html)
+
+## Company
+- [Private Label & OEM](https://www.example.com/oem.html)
+- [About & Factory](https://www.example.com/about.html)
+- [FAQ](https://www.example.com/faq.html)
+- [Get a Quote](https://www.example.com/contact.html)

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.example.com/about.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/contact.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/faq.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/oem.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/products/bamboo-cutting-boards.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/products/bamboo-kitchen-storage.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/products/bamboo-serving-boards.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://www.example.com/products.html</loc><lastmod>2026-11-08</lastmod></url>
+</urlset>

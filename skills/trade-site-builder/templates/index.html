@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{HOME_TITLE}}</title>
+  <meta name="description" content="{{HOME_DESCRIPTION}}">
+  <link rel="canonical" href="https://www.example.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{HOME_TITLE}}">
+  <meta property="og:description" content="{{HOME_DESCRIPTION}}">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:image" content="https://www.example.com/assets/img/og-cover.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.example.com/#org",
+        "name": "{{BRAND}}",
+        "url": "https://www.example.com/",
+        "logo": "https://www.example.com/assets/img/logo.png",
+        "email": "{{EMAIL}}"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.example.com/#website",
+        "url": "https://www.example.com/",
+        "name": "{{BRAND}}",
+        "publisher": {"@id": "https://www.example.com/#org"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">{{BRAND}}</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="products.html">Products</a>
+        <a href="oem.html">OEM &amp; Custom</a>
+        <a href="about.html">Factory</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn btn--primary" href="contact.html">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div>
+          <p class="eyebrow">{{EYEBROW e.g. &lt;Product category&gt; Manufacturer}}</p>
+          <h1>{{H1: who + what + for whom, ≤ 12 words}}</h1>
+          <p class="lead">{{One sentence: product range, key spec, customization, buyer type.}}</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="contact.html">Get a Quote</a>
+            <a class="btn btn--ghost" href="products.html">View Products</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <!-- 换成真实产品/工厂大图：<img src="assets/img/xxx.jpg" alt="..." width="1600" height="1200"> -->
+          <div class="ph">[TODO: hero photo — main product in real use, 1600×1200]</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- 信任条：只放已确认、可证明的点；没有就删掉对应格子 -->
+      <div class="trust">
+        <div><strong>[TODO: year]</strong>Manufacturing since</div>
+        <div><strong>OEM / ODM</strong>Custom size, logo &amp; packaging</div>
+        <div><strong>[TODO: certificate]</strong>Tested to [TODO: standard]</div>
+        <div><strong>[TODO: hours]</strong>Reply time on business days</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <h2>Product Range</h2>
+        <p class="lead">{{One line on how buyers choose: by size, material, application…}}</p>
+        <div class="grid">
+          <article class="card">
+            <div class="ph">[TODO: product photo — series 1]</div>
+            <div class="card-body">
+              <h3>{{Series 1}}</h3>
+              <p>{{Key spec in one line.}}</p>
+              <a class="more" href="products/{{slug-1}}.html">View specs →</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="ph">[TODO: product photo — series 2]</div>
+            <div class="card-body">
+              <h3>{{Series 2}}</h3>
+              <p>{{Key spec in one line.}}</p>
+              <a class="more" href="products/{{slug-2}}.html">View specs →</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="ph">[TODO: product photo — series 3]</div>
+            <div class="card-body">
+              <h3>{{Series 3}}</h3>
+              <p>{{Key spec in one line.}}</p>
+              <a class="more" href="products/{{slug-3}}.html">View specs →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <h2>Why Buyers Work With Us</h2>
+        <div class="grid">
+          <div><h3>{{Reason 1}}</h3><p>{{Evidence: photo, document or confirmed number.}}</p></div>
+          <div><h3>{{Reason 2}}</h3><p>{{Evidence.}}</p></div>
+          <div><h3>{{Reason 3}}</h3><p>{{Evidence.}}</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>How OEM Orders Work</h2>
+        <ol class="steps">
+          <li>Send your spec or drawing</li>
+          <li>Quote &amp; sample [TODO: days]</li>
+          <li>Approve sample</li>
+          <li>Production &amp; QC</li>
+          <li>Packing &amp; shipping</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container faq">
+        <h2>Common Questions</h2>
+        <details><summary>What is your MOQ?</summary><p>[TODO: confirmed MOQ, or "Contact us with your spec and we will confirm."]</p></details>
+        <details><summary>Can you make custom sizes and packaging?</summary><p>{{Answer from fact base.}}</p></details>
+        <details><summary>How long does a sample take?</summary><p>[TODO: sample lead time]</p></details>
+        <p><a href="faq.html">See all FAQs →</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Tell us your spec. Get a quote.</h2>
+            <p>We reply within [TODO: hours] on business days.</p>
+          </div>
+          <a class="btn btn--primary" href="contact.html">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>{{BRAND}}</strong><br>
+        {{Company legal name in English}}<br>
+        [TODO: address]<br>
+        <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+      </div>
+      <div>
+        <a href="products.html">Products</a>
+        <a href="oem.html">OEM &amp; Custom</a>
+        <a href="about.html">Factory</a>
+      </div>
+      <div>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <span>© {{YEAR}} {{BRAND}}</span>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-cta"><a class="btn btn--primary" href="contact.html">Get a Quote</a></div>
+
+  <script>
+    var t = document.querySelector('.nav-toggle'), n = document.getElementById('nav');
+    t && t.addEventListener('click', function () { var o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+  </script>
+</body>
+</html>
